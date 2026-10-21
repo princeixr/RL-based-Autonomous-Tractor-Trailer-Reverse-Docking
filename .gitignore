@@ -1,0 +1,22 @@
+# Third-party academic papers (local reading copies only)
+research/papers/*.pdf
+
+# Generated proposal intermediate
+docs/proposal/*.ps
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+
+# Training artifacts
+checkpoints/
+runs/
+wandb/
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/

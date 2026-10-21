@@ -6,9 +6,9 @@ import re
 import textwrap
 
 
-ROOT = Path(__file__).resolve().parent.parent
-SOURCE = ROOT / "project_proposal_submission.md"
-OUTPUT = ROOT / "project_proposal_submission.ps"
+PROPOSAL_DIR = Path(__file__).resolve().parent
+SOURCE = PROPOSAL_DIR / "two-page-proposal.md"
+OUTPUT = PROPOSAL_DIR / "two-page-proposal.ps"
 
 PAGE_WIDTH = 612
 PAGE_HEIGHT = 792

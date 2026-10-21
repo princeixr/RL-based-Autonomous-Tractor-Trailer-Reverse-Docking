@@ -1,2 +1,92 @@
-# RL-based-Autonomous-Tractor-Trailer-Reverse-Docking
-A simulation-based framework for autonomous tractor–trailer reverse docking using trajectory-aware reinforcement learning, model-based control, path planning, and safety constraints.
+# RL-Based Autonomous Tractor–Trailer Reverse Docking
+
+A simulation-based course project for safely reversing a tractor–trailer into a selected logistics-center loading dock. The project combines trajectory-aware reinforcement learning, a conventional control baseline, reference-path generation, collision and jackknife constraints, and a final 3D simulation.
+
+## Project goal
+
+The core research question is whether a PPO controller using path-relative preview information can reliably reverse a tractor–trailer into a loading dock and how it compares with a model-based controller under varied starting poses, vehicle parameters, and observation noise.
+
+The six-week core scope is intentionally focused on:
+
+- A verified low-speed tractor–trailer model
+- Fixed or simply generated docking references
+- A classical trajectory-tracking baseline
+- A trajectory-aware PPO controller
+- Collision and jackknife detection
+- Quantitative held-out evaluation
+- One reproducible 3D reverse-docking demonstration
+
+LiDAR mapping, visual dock-number recognition, advanced global planning, and dynamic obstacles are stretch goals rather than critical-path requirements.
+
+## Repository structure
+
+```text
+.
+├── README.md
+├── docs/
+│   └── proposal/
+│       ├── full-proposal.md
+│       ├── two-page-proposal.md
+│       ├── two-page-proposal.pdf
+│       └── render-proposal-pdf.py
+└── research/
+    ├── README.md
+    └── papers/                 # Local reading copies; see copyright note
+```
+
+Implementation directories for models, controllers, environments, evaluation, and tests will be added as development begins.
+
+## Proposal
+
+- [Full project proposal](docs/proposal/full-proposal.md)
+- [Two-page submission proposal](docs/proposal/two-page-proposal.md)
+- [Two-page proposal PDF](docs/proposal/two-page-proposal.pdf)
+- [Six-week milestones and work division](docs/proposal/full-proposal.md#12-parallel-work-plan)
+
+## Academic foundation
+
+The project is informed by four principal works:
+
+1. H. Yan et al., “Trajectory State Model-based Reinforcement Learning for Truck-trailer Reverse Driving,” ICRCA 2024. [IEEE DOI](https://doi.org/10.1109/ICRCA60878.2024.10649133)
+2. B. Moradi and M. Mehrandezh, “A Non-linear MPC Local Planner for Tractor-Trailer Vehicles in Forward and Backward Maneuvering,” 2022. [arXiv](https://arxiv.org/abs/2212.11427)
+3. H. Ma et al., “A Hierarchical Approach for Tractor-trailer Motion Planning Using Graph Search and Reinforcement Learning,” ECC 2025. [MERL publication](https://www.merl.com/publications/TR2025-093)
+4. C. Menz and A. Wenzel, “Edge-based Imitation Learning for Autonomous Tasks: A Case Study on Tractor-Trailer Positioning,” 2026. [Publisher DOI](https://doi.org/10.1515/auto-2025-0081)
+
+See the [research index](research/README.md) for summaries, relevance to this project, and additional technical references.
+
+## Related industry-scale work
+
+This problem is already receiving significant industrial investment and deployment:
+
+- [Outrider](https://www.outrider.ai/press-releases/outrider-builds-first-in-industry-safety-system-for-driverless-yard-operations/) develops autonomous yard trucks that move, hitch, and back trailers in mixed-traffic logistics yards. Its system also integrates trailer brake-line connection and yard-management software. [Its 2024 Series D announcement](https://www.outrider.ai/press-releases/outrider-closes-62-million-series-d-financing-to-drive-growth-of-yard-automation/) reported a $62 million round and more than $250 million in total equity funding.
+- [ISEE and TICO](https://www.isee.ai/news/business-wire-isee-and-tico-announce-strategic-partnership-to-deliver-industry-first-fully-integrated-autonomous-yard-trucks-to-customer-operations) are deploying OEM-integrated autonomous yard trucks at active logistics sites. Their system addresses mixed traffic, trailer movement, and production-scale yard operation.
+- [Embotech, Terberg, and APM Terminals](https://www.terbergspecialvehicles.com/en/news/apm-terminals-maasvlakte-ii-embotech-and-terberg-expand-automated-terminal-tractor-fleet-in-rotterdam/) are scaling Level-4 automated terminal tractors in Rotterdam. Reported validation includes mixed-traffic driving, narrow-lane maneuvering, reverse parking, and centimeter-level motion planning.
+- [FERNRIDE and HHLA](https://fernride.com/news/fernride-hhla-driverless-machinery-directive) are operating autonomous terminal tractors in Estonia following safety certification, with an emphasis on gradual driverless deployment in live port logistics.
+- [Mitsubishi Electric Research Laboratories](https://www.merl.com/publications/TR2025-093) conducts directly related corporate research in tractor–trailer planning, reinforcement learning, optimization, and collision avoidance. Its [2026 adaptive planning work](https://www.merl.com/publications/TR2026-118) reports simulation and field-test validation.
+- [Einride](https://www.einride.tech/press/einride-operates-first-ever-fully-autonomous-heavy-duty-truck-on-a-public-road-in-belgium-at-the-port-of-antwerp-bruges) and [Volvo Autonomous Solutions](https://www.volvoautonomoussolutions.com/en-en/autona-freight.html) are developing broader autonomous freight and terminal ecosystems. Their focus extends beyond dock backing but demonstrates the commercial direction of autonomous logistics.
+
+These systems reinforce the project’s modular design: perception and localization supply a structured world state, planning produces a feasible maneuver, control executes it, and an independent safety layer monitors the vehicle.
+
+## Current status
+
+- Project proposal completed
+- Six-week work plan defined
+- Literature set collected and indexed
+- Vehicle model and simulator implementation not yet started
+
+## Team workflow
+
+Development should use short feature branches and reviewed pull requests:
+
+```bash
+git switch -c feature/kinematic-model
+# make and test a focused change
+git add .
+git commit -m "Implement tractor-trailer kinematic model"
+git push -u origin feature/kinematic-model
+gh pr create --fill
+```
+
+## Copyright note
+
+The papers used for study remain the property of their respective authors and publishers. Local PDF copies under `research/papers/` are ignored by Git and should not be redistributed unless their licenses permit it. The research index links to publisher or author-hosted versions.

@@ -1,5 +1,5 @@
 # Third-party academic papers (local reading copies only)
-research/papers/*.pdf
+# research/papers/*.pdf
 
 # Generated proposal intermediate
 docs/proposal/*.ps

@@ -1,5 +1,7 @@
 # RL-Based Autonomous Tractor–Trailer Reverse Docking
 
+![Overhead view of a tractor-trailer reversing toward a loading dock](docs/assets/reverse-docking.png)
+
 A simulation-based course project for safely reversing a tractor–trailer into a selected logistics-center loading dock. The project combines trajectory-aware reinforcement learning, a conventional control baseline, reference-path generation, collision and jackknife constraints, and a final 3D simulation.
 
 ## Project goal
@@ -24,6 +26,8 @@ LiDAR mapping, visual dock-number recognition, advanced global planning, and dyn
 .
 ├── README.md
 ├── docs/
+│   ├── assets/
+│   │   └── reverse-docking.png
 │   └── proposal/
 │       ├── full-proposal.md
 │       ├── two-page-proposal.md

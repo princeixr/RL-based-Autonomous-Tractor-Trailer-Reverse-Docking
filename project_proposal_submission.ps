@@ -1,0 +1,140 @@
+%!PS-Adobe-3.0
+%%Creator: project proposal renderer
+%%Pages: 2
+%%BoundingBox: 0 0 612 792
+%%EndComments
+%%Page: 1 1
+0.07 0.25 0.38 setrgbcolor /Helvetica-Bold findfont 17.2 scalefont setfont 46.0 754.0 moveto (Trajectory-Aware Reinforcement Learning for Autonomous) show
+0.07 0.25 0.38 setrgbcolor /Helvetica-Bold findfont 17.2 scalefont setfont 46.0 734.0 moveto (Tractor-Trailer Reverse Docking) show
+0.10 0.32 0.48 setrgbcolor 1.2 setlinewidth 46 718.0 moveto 566 718.0 lineto stroke
+0.3 0.3 0.3 setrgbcolor /Helvetica findfont 8.7 scalefont setfont 46.0 706.0 moveto (Team: Two-member course project) show
+0.3 0.3 0.3 setrgbcolor /Helvetica findfont 8.7 scalefont setfont 46.0 695.0 moveto (Area: Reinforcement learning, motion planning, and autonomous vehicle simulation) show
+0.07 0.3 0.47 setrgbcolor /Helvetica-Bold findfont 11.2 scalefont setfont 46.0 681.0 moveto (Abstract) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 667.0 moveto (Reversing a tractor-trailer into a loading dock is a challenging control problem because the vehicle is) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 656.6 moveto (nonlinear, nonholonomic, underactuated, and unstable while moving backward. Small steering errors can cause) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 646.2 moveto (the articulation angle to grow and lead to jackknifing. This project proposes a modular simulated autonomy) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 635.8 moveto (system that plans and executes a safe reverse-docking maneuver at a logistics service center. A path) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 625.4 moveto (planner will produce a reference trajectory to a selected loading door, and a trajectory-aware Proximal) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 615.0 moveto (Policy Optimization \(PPO\) controller will steer the vehicle along it. A model-based controller will provide) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 604.6 moveto (a conventional baseline. The system will first be developed in a lightweight two-dimensional environment) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 594.2 moveto (and then transferred to a three-dimensional MuJoCo simulation. Performance will be evaluated over) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 583.8 moveto (randomized scenarios using docking success, collision and jackknife rates, final pose error, maneuver time,) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 573.4 moveto (steering smoothness, and controller computation time.) show
+0.07 0.3 0.47 setrgbcolor /Helvetica-Bold findfont 11.2 scalefont setfont 46.0 557.0 moveto (Problem and Research Question) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 543.0 moveto (The system receives the tractor and trailer configuration, a static map, and the pose of a selected loading) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 532.6 moveto (dock. It must place the trailer within a specified position and orientation tolerance while avoiding) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 522.2 moveto (obstacles, respecting steering limits, and maintaining a safe articulation angle. The central research) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 511.8 moveto (question is: Can a PPO controller using trajectory-relative preview information reliably reverse a tractor-) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 501.4 moveto (trailer into a dock, and how does it compare with a model-based controller under changes in starting pose,) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 491.0 moveto (vehicle parameters, and observation noise?) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 477.6 moveto (We hypothesize that trajectory-relative observations will be easier to learn from than raw global) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 467.2 moveto (coordinates. The model-based controller is expected to provide strong nominal safety and accuracy, while) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 456.8 moveto (PPO may offer fast online control and greater tolerance to moderate model variation after suitable) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 446.4 moveto (training.) show
+0.07 0.3 0.47 setrgbcolor /Helvetica-Bold findfont 11.2 scalefont setfont 46.0 430.0 moveto (Objectives and Scope) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 416.0 moveto (The project has five primary objectives:) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 402.6 moveto (1. Implement and validate a low-speed tractor-trailer kinematic model.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 391.4 moveto (2. Develop reference-path generation and path-relative error measurements.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 380.2 moveto (3. Implement a conventional trajectory-tracking baseline, preferably nonlinear model predictive control) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 369.8 moveto (\(NMPC\).) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 358.6 moveto (4. Train a PPO controller for reverse trajectory following and docking.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 347.4 moveto (5. Integrate the planner and controllers with a 3D logistics-yard simulation and compare them) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 337.0 moveto (quantitatively.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 325.8 moveto (The core scope includes one tractor, one conventional semitrailer, static obstacles, a known map, a known) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 315.4 moveto (target dock pose, and low-speed operation. Simulator ground truth will initially provide localization so) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 305.0 moveto (that planning and control can be evaluated independently. Simulated LiDAR mapping and camera-based dock-) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 294.6 moveto (number recognition are extensions rather than core requirements. Dynamic traffic, multiple trailers, high-) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 284.2 moveto (speed dynamics, and an end-to-end sensor-to-steering policy are outside the core scope.) show
+0.07 0.3 0.47 setrgbcolor /Helvetica-Bold findfont 11.2 scalefont setfont 46.0 267.8 moveto (Proposed Method) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 253.8 moveto (Development will begin with a Python/Gymnasium-style 2D environment. The vehicle state will include tractor) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 243.4 moveto (position and heading, trailer heading, articulation angle, steering angle, and velocity. Collision,) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 233.0 moveto (jackknife, and parking-success checks will be implemented before controller training. Early tests will) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 222.6 moveto (cover straight reversing, constant-steering motion, and recovery from small initial articulation angles.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 209.2 moveto (The planner will initially supply predefined straight and curved paths, followed by a Reeds-Shepp or Hybrid) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 198.8 moveto (A*-based reference generator if time permits. Because a car-like path does not guarantee a safe trailer) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 188.4 moveto (articulation history, all generated paths will be checked through the tractor-trailer model.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 175.0 moveto (The PPO observation will emphasize trailer lateral error, truck and trailer heading errors, articulation) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 164.6 moveto (angle, steering state, distance to the goal, and several preview points along the path. The action will be) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 154.2 moveto (a bounded steering or steering-rate command at a fixed low reverse speed. The reward will combine progress,) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 143.8 moveto (tracking accuracy, steering smoothness, successful docking, collision avoidance, and jackknife prevention.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 133.4 moveto (Safety limits will also be enforced by termination or a separate supervisor rather than only through reward) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 123.0 moveto (penalties.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 109.6 moveto (The conventional baseline will minimize tracking, articulation, and steering costs while respecting vehicle) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 99.2 moveto (constraints. After validation in 2D, both controllers will be connected through a common interface to the) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 88.8 moveto (same articulated MuJoCo vehicle and logistics-yard scene.) show
+0.10 0.32 0.48 setrgbcolor 1.2 setlinewidth 46 28.0 moveto 566 28.0 lineto stroke
+0.25 0.25 0.25 setrgbcolor /Helvetica findfont 7.5 scalefont setfont 46.0 17.0 moveto (Trajectory-Aware RL for Tractor-Trailer Reverse Docking) show
+0.25 0.25 0.25 setrgbcolor /Helvetica findfont 7.5 scalefont setfont 520.0 17.0 moveto (Page 1 of 2) show
+showpage
+%%Page: 2 2
+0.07 0.3 0.47 setrgbcolor /Helvetica-Bold findfont 11.2 scalefont setfont 46.0 751.0 moveto (Two-Member Work Plan) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 737.0 moveto (Work will be divided by subsystem ownership, with the other member serving as reviewer. This permits) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 726.6 moveto (parallel progress without creating knowledge silos.) show
+0.12 0.12 0.12 setrgbcolor /Helvetica-Bold findfont 9.4 scalefont setfont 46.0 713.2 moveto (Member A - Modeling, Reference Generation, and Baseline Control) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 701.2 moveto (- Define coordinate frames, geometry, constraints, and success criteria.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 690.0 moveto (- Implement and test the 2D vehicle model, collision detection, and jackknife checks.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 678.8 moveto (- Develop fixed docking references, path-relative errors, and a simple reference generator.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 667.6 moveto (- Implement a reliable classical controller; attempt NMPC only after the fallback baseline works.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 656.4 moveto (- Lead baseline evaluation and document the mathematical model.) show
+0.12 0.12 0.12 setrgbcolor /Helvetica-Bold findfont 9.4 scalefont setfont 46.0 645.2 moveto (Member B - Reinforcement Learning, 3D Simulation, and Integration) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 633.2 moveto (- Build the Gymnasium environment around the verified model.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 622.0 moveto (- Implement PPO training, logging, checkpointing, and domain randomization.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 610.8 moveto (- Build the articulated MuJoCo vehicle and logistics-yard scene.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 599.6 moveto (- Integrate both controllers with the 3D simulator.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 588.4 moveto (- Lead experiment automation, visualization, and 2D-to-3D integration.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 577.2 moveto (Both members will agree on interfaces early, review each other's components, integrate weekly, and jointly) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 566.8 moveto (run the final experiments and demonstration.) show
+0.07 0.3 0.47 setrgbcolor /Helvetica-Bold findfont 11.2 scalefont setfont 46.0 550.4 moveto (Milestones and Schedule) show
+0 0 0 setrgbcolor /Helvetica-Bold findfont 8.6 scalefont setfont 46.0 536.4 moveto (Week 1) show
+0 0 0 setrgbcolor /Helvetica findfont 8.6 scalefont setfont 114.0 536.4 moveto (Freeze interfaces; validate kinematics, geometry, collision, articulation, and) show
+0 0 0 setrgbcolor /Helvetica findfont 8.6 scalefont setfont 114.0 526.0 moveto (scripted 2D motion. Start the Gymnasium and MuJoCo shells in parallel.) show
+0 0 0 setrgbcolor /Helvetica-Bold findfont 8.6 scalefont setfont 46.0 513.6 moveto (Week 2) show
+0 0 0 setrgbcolor /Helvetica findfont 8.6 scalefont setfont 114.0 513.6 moveto (Complete fixed-path tracking with a classical controller and make the PPO) show
+0 0 0 setrgbcolor /Helvetica findfont 8.6 scalefont setfont 114.0 503.2 moveto (environment run full randomized episodes.) show
+0 0 0 setrgbcolor /Helvetica-Bold findfont 8.6 scalefont setfont 46.0 490.8 moveto (Week 3) show
+0 0 0 setrgbcolor /Helvetica findfont 8.6 scalefont setfont 114.0 490.8 moveto (Train PPO on fixed paths, finish the controllable MuJoCo vehicle, and run the) show
+0 0 0 setrgbcolor /Helvetica findfont 8.6 scalefont setfont 114.0 480.4 moveto (first fair 2D controller comparison.) show
+0 0 0 setrgbcolor /Helvetica-Bold findfont 8.6 scalefont setfont 46.0 468.0 moveto (Week 4) show
+0 0 0 setrgbcolor /Helvetica findfont 8.6 scalefont setfont 114.0 468.0 moveto (Integrate both controllers with MuJoCo, compare fixed-action rollouts across) show
+0 0 0 setrgbcolor /Helvetica findfont 8.6 scalefont setfont 114.0 457.6 moveto (simulators, and complete the first 3D reverse dock.) show
+0 0 0 setrgbcolor /Helvetica-Bold findfont 8.6 scalefont setfont 46.0 445.2 moveto (Week 5) show
+0 0 0 setrgbcolor /Helvetica findfont 8.6 scalefont setfont 114.0 445.2 moveto (Freeze features and run held-out baseline, PPO, and one robustness experiment) show
+0 0 0 setrgbcolor /Helvetica findfont 8.6 scalefont setfont 114.0 434.8 moveto (using fixed seeds and metrics.) show
+0 0 0 setrgbcolor /Helvetica-Bold findfont 8.6 scalefont setfont 46.0 422.4 moveto (Week 6) show
+0 0 0 setrgbcolor /Helvetica findfont 8.6 scalefont setfont 114.0 422.4 moveto (Analyze failures, finalize plots and video, cross-review the report, reproduce) show
+0 0 0 setrgbcolor /Helvetica findfont 8.6 scalefont setfont 114.0 412.0 moveto (selected runs, and prepare the presentation.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 399.6 moveto (Each week ends with an integration checkpoint. Automatic planning and sensors will be removed if the fixed-) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 389.2 moveto (path baseline is not complete by Week 2. No new core features will be added after Week 4.) show
+0.07 0.3 0.47 setrgbcolor /Helvetica-Bold findfont 11.2 scalefont setfont 46.0 372.8 moveto (Evaluation) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 358.8 moveto (The controllers will be evaluated on at least 100 held-out trials per condition where computation permits.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 348.4 moveto (Identical starting states and target docks will be used for both methods. Primary metrics are docking) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 338.0 moveto (success rate, collision rate, jackknife rate, final lateral and longitudinal error, trailer-heading error,) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 327.6 moveto (maximum articulation angle, maneuver time, path length, steering smoothness, and control computation time.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 314.2 moveto (Experiments will compare PPO with the conventional baseline, global-coordinate observations with) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 303.8 moveto (trajectory-relative observations, and perfect state information with noisy observations. Additional tests) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 293.4 moveto (will vary starting pose and trailer geometry. Failed trials will be reported and categorized rather than) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 283.0 moveto (excluded.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 269.6 moveto (The minimum success target is at least 90% completion in nominal held-out scenarios, no collision during) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 259.2 moveto (successful trials, compliance with the articulation limit, and a reproducible complete docking maneuver in) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 248.8 moveto (the 3D simulator.) show
+0.07 0.3 0.47 setrgbcolor /Helvetica-Bold findfont 11.2 scalefont setfont 46.0 232.4 moveto (Expected Outcomes and Deliverables) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 218.4 moveto (The project will produce a verified 2D environment, path planner, conventional controller, trained PPO) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 208.0 moveto (policy, articulated 3D simulation, evaluation suite, quantitative comparison, and demonstration video. Its) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 197.6 moveto (principal contribution will be an interpretable evaluation of trajectory-aware RL for articulated reverse) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 187.2 moveto (docking.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 173.8 moveto (If schedule pressure occurs, perception and advanced planning will be removed before the core controller) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 46.0 163.4 moveto (comparison and 3D reverse-docking demonstration.) show
+0.07 0.3 0.47 setrgbcolor /Helvetica-Bold findfont 11.2 scalefont setfont 46.0 147.0 moveto (Selected References) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 133.0 moveto (1. H. Yan et al., "Trajectory State Model-based Reinforcement Learning for Truck-trailer Reverse) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 122.6 moveto (Driving," ICRCA, 2024.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 111.4 moveto (2. B. Moradi and M. Mehrandezh, "A Non-linear MPC Local Planner for Tractor-Trailer Vehicles in Forward) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 101.0 moveto (and Backward Maneuvering," arXiv:2212.11427, 2022.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 89.8 moveto (3. H. Ma et al., "A Hierarchical Approach for Tractor-trailer Motion Planning Using Graph Search and) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 79.4 moveto (Reinforcement Learning," ECC, 2025.) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 68.2 moveto (4. C. Menz and A. Wenzel, "Edge-based Imitation Learning for Autonomous Tasks: A Case Study on Tractor-) show
+0 0 0 setrgbcolor /Helvetica findfont 8.8 scalefont setfont 57.0 57.8 moveto (Trailer Positioning," at-Automatisierungstechnik, 2026.) show
+0.10 0.32 0.48 setrgbcolor 1.2 setlinewidth 46 28.0 moveto 566 28.0 lineto stroke
+0.25 0.25 0.25 setrgbcolor /Helvetica findfont 7.5 scalefont setfont 46.0 17.0 moveto (Trajectory-Aware RL for Tractor-Trailer Reverse Docking) show
+0.25 0.25 0.25 setrgbcolor /Helvetica findfont 7.5 scalefont setfont 520.0 17.0 moveto (Page 2 of 2) show
+showpage
+%%EOF
